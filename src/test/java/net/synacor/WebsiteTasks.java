@@ -79,8 +79,6 @@ public class WebsiteTasks {
     @Test
     public void searchFunctionality(){
 
-        String expectedResult = "https://www.nasa.gov/";
-
         WebElement searchFunction = driver.findElement(By.name("q"));
 
         searchFunction.sendKeys("nasa");
@@ -90,6 +88,8 @@ public class WebsiteTasks {
         searchButton.click();
 
         WebElement expectedWebSites = driver.findElement(By.xpath("//a[.='NASA']"));
+
+        String expectedResult = "https://www.nasa.gov/";
 
         String actualResult = expectedWebSites.getAttribute("href");
 
